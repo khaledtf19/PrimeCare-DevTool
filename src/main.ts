@@ -15,13 +15,11 @@ const componentSelector = async () => {
     return;
   }
 
-  // Inject computePosition script FIRST
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     files: ['assets/injectFloaing.js'],
   });
 
-  // Then inject your logic that uses it
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     func: () => {
@@ -81,7 +79,6 @@ const componentSelector = async () => {
         let res = getDevToolSrc(el)
         if (!res) return
         el = res.el
-        console.log(el)
         if (!el || !(el instanceof HTMLElement) || el === hoverEffectEl) return;
         currSrc = res.src
 

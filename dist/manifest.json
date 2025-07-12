@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "PrimeCare DevTool",
+  "version": "1.0.0",
+  "description": "PrimeCare DevTool to show the path of the component",
+  "host_permissions": [
+    "http://localhost/PrimeCare/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "scripting"
+  ]
+}
